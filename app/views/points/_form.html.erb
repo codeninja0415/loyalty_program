@@ -1,0 +1,37 @@
+<%= form_with(model: point) do |form| %>
+  <% if point.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(point.errors.count, "error") %> prohibited this point from being saved:</h2>
+
+      <ul>
+        <% point.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :transaction_id_id, style: "display: block" %>
+    <%= form.text_field :transaction_id_id %>
+  </div>
+
+  <div>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div>
+    <%= form.label :reason, style: "display: block" %>
+    <%= form.text_field :reason %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
